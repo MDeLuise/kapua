@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -e
-
+# just to commit 
 ### Build output file setup
 
 export OUTPUT=build.txt
