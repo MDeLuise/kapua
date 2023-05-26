@@ -14,15 +14,6 @@ info:
 paths: {}
 
 components:
-  parameters:
-    channelInfoId:
-      name: channelInfoId
-      in: path
-      description: The ID of the ChannelInfo on which to perform the operation
-      schema:
-        type: string
-        format: base64
-      required: true
   schemas:
     channelInfo:
       type: object

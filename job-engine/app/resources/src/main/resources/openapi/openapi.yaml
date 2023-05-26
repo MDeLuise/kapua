@@ -65,15 +65,6 @@ paths:
     $ref: './jobEngine-scopeId-jobId-executionId.yaml#/paths/~1stop-execution~1{scopeId}~1{jobId}~1{executionId}'
 
 components:
-  parameters:
-    scopeId:
-      name: scopeId
-      in: path
-      description: |
-        The ID of the Scope where to perform the operation.
-      schema:
-          $ref: '#/components/schemas/kapuaId'
-      required: true
   schemas:
     kapuaId:
       type: string

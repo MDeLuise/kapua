@@ -20,7 +20,7 @@ paths:
       operationId: roleGet
       parameters:
         - $ref: '../openapi.yaml#/components/parameters/scopeId'
-        - $ref: './role.yaml#/components/parameters/roleId'
+        - $ref: '../openapi.yaml#/components/parameters/roleId'
       responses:
         200:
           description: The details of the desired Role
@@ -43,7 +43,7 @@ paths:
       operationId: roleUpdate
       parameters:
         - $ref: '../openapi.yaml#/components/parameters/scopeId'
-        - $ref: './role.yaml#/components/parameters/roleId'
+        - $ref: '../openapi.yaml#/components/parameters/roleId'
       requestBody:
         description: An object containing the new properties for the Role to update
         content:
@@ -88,7 +88,7 @@ paths:
       operationId: roleDelete
       parameters:
         - $ref: '../openapi.yaml#/components/parameters/scopeId'
-        - $ref: './role.yaml#/components/parameters/roleId'
+        - $ref: '../openapi.yaml#/components/parameters/roleId'
       responses:
         204:
           description: The Role has been deleted

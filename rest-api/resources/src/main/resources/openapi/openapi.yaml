@@ -449,6 +449,271 @@ components:
           - $ref: '#/components/schemas/kapuaId'
           - default: _
       required: true
+    accessInfoId:
+      name: accessInfoId
+      description: The ID of the AccessInfo on which to perform the operation
+      in: path
+      schema:
+        $ref: '#/components/schemas/kapuaId'
+      required: true
+    accessPermissionId:
+      name: accessPermissionId
+      in: path
+      description: The ID of the AccessPermission on which to perform the operation
+      schema:
+        $ref: '#/components/schemas/kapuaId'
+      required: true
+    accessRoleId:
+      name: accessRoleId
+      in: path
+      description: The ID of the AccessRole on which to perform the operation
+      schema:
+        $ref: '#/components/schemas/kapuaId'
+      required: true
+    userId:
+      name: userId
+      in: query
+      description: The ID of the User to use as a filter in the query
+      schema:
+        allOf:
+          - $ref: '#/components/schemas/kapuaId'
+    deviceId:
+      name: deviceId
+      in: path
+      description: The ID of the Device on which to perform the operation
+      schema:
+        $ref: '#/components/schemas/kapuaId'
+      required: true
+    tagId:
+      name: tagId
+      in: path
+      description: The ID of the Tag on which to perform the operation
+      schema:
+        $ref: '#/components/schemas/kapuaId'
+      required: true
+    credentialId:
+      name: credentialId
+      in: path
+      description: The ID of the Credential on which to perform the operation
+      schema:
+        $ref: '#/components/schemas/kapuaId'
+      required: true
+    accountId:
+      name: accountId
+      in: path
+      description: The ID of the Account on which to perform the operation
+      schema:
+        $ref: '#/components/schemas/kapuaId'
+      required: true
+    channelInfoId:
+      name: channelInfoId
+      in: path
+      description: The ID of the ChannelInfo on which to perform the operation
+      schema:
+        type: string
+        format: base64
+      required: true
+    clientInfoId:
+      name: clientInfoId
+      in: path
+      description: The ID of the ClientInfo on which to perform the operation
+      schema:
+        type: string
+      required: true
+    roleId:
+      name: roleId
+      in: path
+      description: The ID of the Role on which to perform the operation
+      schema:
+        $ref: '#/components/schemas/kapuaId'
+      required: true
+    rolePermissionId:
+      name: rolePermissionId`
+      in: path
+      description: The ID of the RolePermission on which to perform the operation
+      schema:
+        $ref: '#/components/schemas/kapuaId'
+      required: true
+    datastoreMessageId:
+      name: datastoreMessageId
+      in: path
+      description: The ID of the MetricInfo on which to perform the operation
+      schema:
+        type: string
+      required: true
+    groupId:
+      name: groupId
+      in: path
+      description: The ID of the Group on which to perform the operation
+      schema:
+        $ref: '#/components/schemas/kapuaId'
+      required: true
+    domainId:
+      name: domainId
+      in: path
+      description: The ID of the Domain on which to perform the operation
+      schema:
+        $ref: '#/components/schemas/kapuaId'
+      required: true
+    connectionId:
+      name: connectionId
+      in: path
+      description: The ID of the Connection on which to perform the operation
+      schema:
+        $ref: '#/components/schemas/kapuaId'
+      required: true
+    connectionStatus:
+      name: status
+      in: query
+      description: The connection status to filter results
+      schema:
+        $ref: './deviceConnection/deviceConnection.yaml#/components/schemas/connectionStatus'
+    clientIp:
+      name: clientIp
+      in: query
+      description: The client ip to filter results
+      schema:
+        type: string
+    protocol:
+      name: protocol
+      in: query
+      description: The connection protocol to filter results
+      schema:
+        type: string
+    metricInfoId:
+      name: metricInfoId
+      in: path
+      description: The ID of the MetricInfo on which to perform the operation
+      schema:
+        type: string
+      required: true
+    endpointInfoId:
+      name: endpointInfoId
+      in: path
+      description: The ID of the EndpointInfo on which to perform the operation
+      schema:
+        $ref: '#/components/schemas/kapuaId'
+      required: true
+    endpointType:
+      name: endpointType
+      in: query
+      description: The type of the Endpoints to query for
+      schema:
+        allOf:
+          - $ref: './endpointInfo/endpointInfo.yaml#/components/schemas/endpointType'
+          - default: resource
+      required: false
+    jobStepDefinitionId:
+      name: jobStepDefinitionId
+      in: path
+      description: The ID of the Job Step Definition on which to perform the operation
+      schema:
+        $ref: '#/components/schemas/kapuaId'
+      required: true
+    triggerDefinitionId:
+      name: triggerDefinitionId
+      in: path
+      description: The ID of the Trigger Definition on which to perform the operation
+      schema:
+        $ref: '#/components/schemas/kapuaId'
+      required: true
+    timeout:
+      name: timeout
+      in: query
+      description: The timeout for the request in milliseconds
+      schema:
+        type: integer
+        default: 30000
+    fetchAttributes:
+      name: fetchAttributes
+      in: query
+      schema:
+        type: array
+        items:
+          $ref: '#/components/schemas/fetchAttribute'
+    clientId:
+      name: clientId
+      in: query
+      description: The client id to filter results
+      schema:
+        type: string
+    bundleId:
+      name: bundleId
+      in: path
+      description: The ID of the Bundle on which to perform the operation
+      schema:
+        type: string
+      required: true
+    componentId:
+      name: componentId
+      in: path
+      description: The ID of the Component on which to perform the operation
+      schema:
+        $ref: '#/components/schemas/kapuaId'
+      required: true
+    snapshotId:
+      name: snapshotId
+      description: The ID of the Snapshot on which to perform the operation
+      in: path
+      required: true
+      schema:
+        type: string
+    notificationId:
+      name: notificationId
+      in: path
+      description: The ID of the Registry Notification on which to perform the operation
+      schema:
+        $ref: '#/components/schemas/kapuaId'
+      required: true
+    operationId:
+      name: operationId
+      in: path
+      description: The ID of the Registry Operation on which to perform the operation
+      schema:
+        $ref: '#/components/schemas/kapuaId'
+      required: true
+    deviceEventId:
+      name: deviceEventId
+      in: path
+      description: The ID of the Device Event on which to perform the operation
+      schema:
+        $ref: '#/components/schemas/kapuaId'
+      required: true
+    jobId:
+      name: jobId
+      in: path
+      description: The ID of the Job on which to perform the operation
+      schema:
+        $ref: '#/components/schemas/kapuaId'
+      required: true
+    executionId:
+      name: executionId
+      in: path
+      description: The ID of the Job Execution on which to perform the operation
+      schema:
+        $ref: '#/components/schemas/kapuaId'
+      required: true
+    targetId:
+      name: targetId
+      in: path
+      description: The entity ID of the on which perform the operations
+      schema:
+        $ref: '#/components/schemas/kapuaId'
+      required: true
+    triggerId:
+      name: triggerId
+      in: path
+      description: The ID of the Job Trigger on which to perform the operation
+      schema:
+        $ref: '#/components/schemas/kapuaId'
+      required: true
+    stepId:
+      name: stepId
+      in: path
+      description: The ID of the Job Step on which to perform the operation
+      schema:
+        $ref: '#/components/schemas/kapuaId'
+      required: true
     limit:
       name: limit
       in: query

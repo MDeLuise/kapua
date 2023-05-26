@@ -20,7 +20,7 @@ paths:
       operationId: mfaOptionGet
       parameters:
         - $ref: '../openapi.yaml#/components/parameters/scopeId'
-        - $ref: './user.yaml#/components/parameters/userId'
+        - $ref: '../openapi.yaml#/components/parameters/userId'
       responses:
         200:
           description: The details of the desired MfaOption
@@ -43,7 +43,7 @@ paths:
       operationId: mfaOptionCreate
       parameters:
         - $ref: '../openapi.yaml#/components/parameters/scopeId'
-        - $ref: './user.yaml#/components/parameters/userId'
+        - $ref: '../openapi.yaml#/components/parameters/userId'
       requestBody:
         description: An object containing the properties for the new MfaOption to be created
         content:
@@ -73,7 +73,7 @@ paths:
       operationId: mfaOptionDelete
       parameters:
         - $ref: '../openapi.yaml#/components/parameters/scopeId'
-        - $ref: './user.yaml#/components/parameters/userId'
+        - $ref: '../openapi.yaml#/components/parameters/userId'
       responses:
         204:
           description: The MfaOption has been deleted

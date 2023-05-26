@@ -20,7 +20,7 @@ paths:
       operationId: jobStart
       parameters:
         - $ref: '../openapi.yaml#/components/parameters/scopeId'
-        - $ref: './jobEngine.yaml#/components/parameters/jobId'
+        - $ref: '../openapi.yaml#/components/parameters/jobId'
       responses:
         204:
           description: The Start operation has been received by the Job Engine
@@ -40,7 +40,7 @@ paths:
       operationId: jobStartWithOptions
       parameters:
         - $ref: '../openapi.yaml#/components/parameters/scopeId'
-        - $ref: './jobEngine.yaml#/components/parameters/jobId'
+        - $ref: '../openapi.yaml#/components/parameters/jobId'
       requestBody:
         content:
           application/json:
@@ -65,7 +65,7 @@ paths:
       operationId: jobCleanData
       parameters:
         - $ref: '../openapi.yaml#/components/parameters/scopeId'
-        - $ref: './jobEngine.yaml#/components/parameters/jobId'
+        - $ref: '../openapi.yaml#/components/parameters/jobId'
       responses:
         204:
           description: The Data has been cleared
@@ -85,7 +85,7 @@ paths:
       operationId: jobStop
       parameters:
         - $ref: '../openapi.yaml#/components/parameters/scopeId'
-        - $ref: './jobEngine.yaml#/components/parameters/jobId'
+        - $ref: '../openapi.yaml#/components/parameters/jobId'
       responses:
         204:
           description: The Stop operation has been received by the Job Engine
@@ -105,7 +105,7 @@ paths:
       operationId: jobIsRunning
       parameters:
         - $ref: '../openapi.yaml#/components/parameters/scopeId'
-        - $ref: './jobEngine.yaml#/components/parameters/jobId'
+        - $ref: '../openapi.yaml#/components/parameters/jobId'
       responses:
         200:
           description: An object representing the running status of a Job
