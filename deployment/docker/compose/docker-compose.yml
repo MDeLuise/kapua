@@ -6,6 +6,8 @@ services:
     image: kapua/kapua-sql:${IMAGE_VERSION}
     ports:
       - "3306:3306"
+    volumes:
+      - "./h2-db:/var/opt/h2/data"
   es:
     container_name: es
     image: docker.elastic.co/elasticsearch/elasticsearch:7.8.1
@@ -39,12 +41,12 @@ services:
       - events-broker
     environment:
       - CRYPTO_SECRET_KEY
-      - KAPUA_DISABLE_SSL
+      - KAPUA_DISABLE_SSL=false
       - KAPUA_DISABLE_DATASTORE
-      - KAPUA_CRT
+      - KAPUA_CRT=$(cat /ssl/host.cert)
       - KAPUA_CA
-      - KAPUA_KEY
-      - KAPUA_KEY_PASSWORD
+      - KAPUA_KEY=$(cat /ssl/host.key)
+      - KAPUA_KEY_PASSWORD=password
       - KAPUA_KEYSTORE
       - KAPUA_KEYSTORE_PASSWORD
       - LOGBACK_LOG_LEVEL
@@ -97,14 +99,15 @@ services:
       - events-broker
       - message-broker
     environment:
+      #- KEYSTORE_NAME=keystore-name
       - CRYPTO_SECRET_KEY
-      - KAPUA_DISABLE_SSL
+      - KAPUA_DISABLE_SSL=false
       - KAPUA_DISABLE_DATASTORE
       - KAPUA_CA
-      - KAPUA_CRT
-      - KAPUA_KEY
-      - KAPUA_KEY_PASSWORD
-      - KAPUA_KEYSTORE
+      - KAPUA_CRT=$(cat /ssl/host.cert)
+      - KAPUA_KEY=$(cat /ssl/host.key)
+      - KAPUA_KEY_PASSWORD=password
+      - KAPUA_KEYSTORE=kapua-keystore
       - KAPUA_KEYSTORE_PASSWORD
       - LOGBACK_LOG_LEVEL
       - KAPUA_CONSOLE_URL
@@ -118,6 +121,9 @@ services:
       - KEYCLOAK_URL
       - KEYCLOAK_CLIENT_ID
       - KEYCLOAK_REALM
+      - JETTY_BASE=/var/opt/jetty
+    volumes:
+      - "/Users/massimiliano.deluise/Desktop/tdl-salvatore/:/ssl"
   kapua-api:
     container_name: kapua-api
     image: kapua/kapua-api:${IMAGE_VERSION}
@@ -132,14 +138,12 @@ services:
     environment:
       - API_CORS_ORIGINS_ALLOWED
       - CRYPTO_SECRET_KEY
-      - KAPUA_DISABLE_SSL
+      - KAPUA_DISABLE_SSL=false
       - KAPUA_DISABLE_DATASTORE
       - KAPUA_CA
-      - KAPUA_CRT
-      - KAPUA_KEY
-      - KAPUA_KEY_PASSWORD
-      - KAPUA_KEYSTORE
-      - KAPUA_KEYSTORE_PASSWORD
+      - KAPUA_CRT=$(cat /ssl/host.cert)
+      - KAPUA_KEY=$(cat /ssl/host.key)
+      - KAPUA_KEY_PASSWORD=password
       - LOGBACK_LOG_LEVEL
       - SWAGGER=${KAPUA_SWAGGER_ENABLE:-true}
   job-engine:
@@ -153,12 +157,10 @@ services:
       - message-broker
     environment:
       - CRYPTO_SECRET_KEY
-      - KAPUA_DISABLE_SSL
+      - KAPUA_DISABLE_SSL=false
       - KAPUA_DISABLE_DATASTORE
       - KAPUA_CA
-      - KAPUA_CRT
-      - KAPUA_KEY
-      - KAPUA_KEY_PASSWORD
-      - KAPUA_KEYSTORE
-      - KAPUA_KEYSTORE_PASSWORD
+      - KAPUA_CRT=$(cat /ssl/host.cert)
+      - KAPUA_KEY=$(cat /ssl/host.key)
+      - KAPUA_KEY_PASSWORD=password
       - LOGBACK_LOG_LEVEL
